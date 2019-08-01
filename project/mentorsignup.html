@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mentor Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        function ValidateEmail() {
+            var email = document.getElementById("uname").value;
+            var lblError = document.getElementById("lblError");
+            lblError.innerHTML = "";
+            var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            if (!expr.test(email)) {
+                lblError.innerHTML = "Invalid email address.";
+            }
+        }
+
+            function ValidatePassword() {
+            var pwd = document.getElementById("psw").value;
+            var pswError = document.getElementById("pswError");
+            pswError.innerHTML = "";
+            var expr = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}/;
+            if (!expr.test(pwd)) {
+                pswError.innerHTML = "Passowrd must contain atleat one upper case,one lower case,one number and between 8 to 15 characters.";
+            }
+            }
+    </script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right,grey,silver,rgb(170, 136, 136));
+        }
+        form {
+            border: 3px solid #f1f1f1;
+        }
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: rgb(109, 128, 2);
+            background-image: linear-gradient(blue, rgb(83, 81, 235));
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        .container {
+            padding: 16px;
+            width: 50%;
+            margin-left: 140px;
+        }
+        .form {
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 40px;
+        }
+        .heading {
+            text-align: center;
+            margin-top: 60px;
+        }
+        h1 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        h2 {
+            margin-top: 70px;
+        }
+        .signup {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        <h1>MENTOR ON DEMAND</h1>
+        <h2>USER SIGN UP</h2>
+    </div>
+
+    <div class="form">
+
+        <form action="/action_page.php">
+
+            <div class="container">
+                <label for="uname"><b>Email Id</b></label>
+                <input type="text" placeholder="Enter Your Email Id" onkeyup="Validate();" name="uname" id="uname" required>
+                <span id="lblError" style="color: red"></span><br>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" onkeyup="ValidatePassword();" id="psw"  required>
+                <span id="pswError" style="color: red"></span><br>
+                <label for="timezone"><b>TimeZone</b></label>
+                <input type="text" placeholder="Enter Your Timezone" name="timezone" id="timezone" required>
+                <label for="facilites"><b>Facilites</b></label><br>
+                <br><input type="checkbox" name="facilites" id="facilites">Material
+                <input type="checkbox" name="facilites" id="facilites">Examples/Cloud Lab<br><br>
+                <label for="number"><b>Number</b></label>
+                <input type="text" placeholder="Enter Your Mobile Number" name="number" id="number">
+                <label for="url"><b>LinkedIn URL</b></label>
+                <input type="text" placeholder="Enter Your Linkedin Url" name="url" id="url">
+                <label for="profile"><b>Mentor Profile</b></label>
+                <input type="text" name="profile" placeholder="Enter your profile details" id="profile">
+                <label for="experience"><b>Experience</b></label>
+                <input type="text" placeholder="Enter Your Experience" name="experience" id="experience">
+                <button type="submit">SIGNUP</button>
+                <div>
+                </div>
+
+            </div>
+    </div>
+
+    </form>
+    
+</body>
+
+</html>
